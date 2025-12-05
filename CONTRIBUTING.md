@@ -60,7 +60,7 @@ Feature suggestions are welcome! Please create an issue with:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/soundboard.git
+   git clone https://github.com/jj-repository/soundboard.git
    cd soundboard
    ```
 

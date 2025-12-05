@@ -27,7 +27,7 @@ A powerful Linux soundboard application with virtual microphone support for Disc
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/soundboard.git
+git clone https://github.com/jj-repository/soundboard.git
 cd soundboard
 ```
 
@@ -56,7 +56,7 @@ npm run tauri dev
 
 ### Binary Installation
 
-Pre-built binaries are available in the [Releases](https://github.com/yourusername/soundboard/releases) section:
+Pre-built binaries are available in the [Releases](https://github.com/jj-repository/soundboard/releases) section:
 
 - `.deb` package for Debian/Ubuntu-based systems
 - `.rpm` package for Fedora/RHEL-based systems
@@ -238,7 +238,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you encounter any issues or have questions:
 
 1. Check the [Troubleshooting](#troubleshooting) section
-2. Search existing [Issues](https://github.com/yourusername/soundboard/issues)
+2. Search existing [Issues](https://github.com/jj-repository/soundboard/issues)
 3. Open a new issue with:
    - Your Linux distribution and version
    - Audio system (PipeWire/PulseAudio version)
