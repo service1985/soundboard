@@ -137,13 +137,4 @@ impl SoundManager {
         self.state.write().system_audio_routing_enabled = enabled;
     }
 
-    #[allow(dead_code)]
-    pub fn find_sound_by_hotkey(&self, hotkey: &str) -> Option<Sound> {
-        self.state
-            .read()
-            .sounds
-            .iter()
-            .find(|s| s.hotkey.as_deref() == Some(hotkey))
-            .cloned()
-    }
 }

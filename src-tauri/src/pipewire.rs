@@ -34,7 +34,7 @@ impl PipeWireManager {
                 "load-module",
                 "module-null-sink",
                 &format!("sink_name={}", self.sink_name),
-                &format!("sink_properties=device.description=\"Soundboard Mix\""),
+                "sink_properties=device.description=\"Soundboard Mix\"",
             ])
             .output()
             .context("Failed to create mix sink")?;
@@ -48,7 +48,7 @@ impl PipeWireManager {
                 "module-remap-source",
                 &format!("source_name={}", self.virtual_mic_name),
                 &format!("master={}", monitor_source),
-                &format!("source_properties=device.description=\"Soundboard Virtual Microphone\""),
+                "source_properties=device.description=\"Soundboard Virtual Microphone\"",
             ])
             .output()
             .context("Failed to create virtual microphone")?;
@@ -78,7 +78,7 @@ impl PipeWireManager {
         // Remove all modules related to our virtual mic
         let output = Command::new("sh")
             .arg("-c")
-            .arg(&format!(
+            .arg(format!(
                 "pactl list modules short | grep -E '({}|{})' | awk '{{print $1}}'",
                 self.virtual_mic_name, self.sink_name
             ))
@@ -228,29 +228,6 @@ impl PipeWireManager {
         Ok(())
     }
 
-    #[allow(dead_code)]
-    pub fn route_app_to_sink(&self, app_name: &str) -> Result<()> {
-        // Find the application's sink input and move it to Soundboard_Mix
-        // This is called after the app starts playing audio
-        let output = Command::new("sh")
-            .arg("-c")
-            .arg(&format!(
-                "pactl list sink-inputs | grep -B 20 'application.name = \"{}\"' | grep 'Sink Input #' | head -1 | sed 's/Sink Input #//'",
-                app_name
-            ))
-            .output()
-            .context("Failed to find sink input")?;
-
-        let sink_input_id = String::from_utf8_lossy(&output.stdout).trim().to_string();
-
-        if !sink_input_id.is_empty() {
-            let _ = Command::new("pactl")
-                .args(["move-sink-input", &sink_input_id, &self.sink_name])
-                .output();
-        }
-
-        Ok(())
-    }
 
     pub fn route_all_app_audio_to_sink(&self) -> Result<()> {
         // Move all current tauri-app sink inputs to Soundboard_Mix

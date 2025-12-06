@@ -34,7 +34,7 @@ impl AudioManager {
             .context("Failed to decode audio file")?;
 
         let stream_handle = self.stream_handle.read();
-        let sink = Sink::try_new(&*stream_handle)
+        let sink = Sink::try_new(&stream_handle)
             .context("Failed to create audio sink")?;
 
         let master_vol = *self.master_volume.read();
@@ -80,10 +80,6 @@ impl AudioManager {
         Ok(())
     }
 
-    #[allow(dead_code)]
-    pub fn get_master_volume(&self) -> f32 {
-        *self.master_volume.read()
-    }
 
     pub fn list_output_devices(&self) -> Result<Vec<String>> {
         let host = cpal::default_host();

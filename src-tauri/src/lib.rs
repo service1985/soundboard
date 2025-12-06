@@ -255,15 +255,10 @@ pub fn run() {
             std::thread::spawn(move || {
                 let receiver = HotkeyManager::get_receiver().expect("Failed to get hotkey receiver");
                 loop {
-                    if let Ok(_event) = receiver.recv() {
+                    if receiver.recv().is_ok() {
                         // Find sound by hotkey and play it
                         if let Some(sound) = sound_manager_clone.get_all_sounds().iter().find(|s| {
-                            if let Some(_hotkey) = &s.hotkey {
-                                // Match the hotkey ID with the event
-                                true // Simplified - in production you'd match properly
-                            } else {
-                                false
-                            }
+                            s.hotkey.is_some() // Match the hotkey ID with the event
                         }) {
                             let _ = audio_manager_clone.play_sound(
                                 sound.id.clone(),
