@@ -1,9 +1,11 @@
 mod audio;
+#[cfg(target_os = "linux")]
 mod hotkeys;
 mod pipewire;
 mod sound_manager;
 
 use audio::AudioManager;
+#[cfg(target_os = "linux")]
 use hotkeys::HotkeyManager;
 use pipewire::PipeWireManager;
 use sound_manager::{Sound, SoundManager, SoundboardState};
@@ -11,7 +13,10 @@ use sound_manager::{Sound, SoundManager, SoundboardState};
 use parking_lot::Mutex;
 use std::path::PathBuf;
 use std::sync::Arc;
-use tauri::{Emitter, Manager, State};
+use tauri::Manager;
+#[cfg(target_os = "linux")]
+use tauri::Emitter;
+use tauri::State;
 
 pub struct AppState {
     audio_manager: Arc<AudioManager>,
