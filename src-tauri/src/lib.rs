@@ -17,6 +17,7 @@ pub struct AppState {
     audio_manager: Arc<AudioManager>,
     sound_manager: Arc<SoundManager>,
     pipewire_manager: Arc<Mutex<PipeWireManager>>,
+    #[cfg(target_os = "linux")]
     hotkey_manager: Arc<Mutex<HotkeyManager>>,
 }
 
@@ -43,7 +44,8 @@ async fn add_sound(path: String, state: State<'_, AppState>) -> Result<Sound, St
 
 #[tauri::command]
 async fn remove_sound(id: String, state: State<'_, AppState>) -> Result<(), String> {
-    // Unregister hotkey if exists
+    // Unregister hotkey if exists (Linux only)
+    #[cfg(target_os = "linux")]
     let _ = state.hotkey_manager.lock().unregister(&id);
 
     state
@@ -60,7 +62,8 @@ async fn update_sound(
     hotkey: Option<String>,
     state: State<'_, AppState>,
 ) -> Result<(), String> {
-    // Update hotkey if provided
+    // Update hotkey if provided (Linux only)
+    #[cfg(target_os = "linux")]
     if let Some(ref hotkey_str) = hotkey {
         if !hotkey_str.is_empty() {
             state
@@ -236,6 +239,8 @@ pub fn run() {
             let audio_manager = Arc::new(AudioManager::new().expect("Failed to create audio manager"));
             let sound_manager = Arc::new(SoundManager::new());
             let pipewire_manager = Arc::new(Mutex::new(PipeWireManager::new()));
+
+            #[cfg(target_os = "linux")]
             let hotkey_manager = Arc::new(Mutex::new(
                 HotkeyManager::new().expect("Failed to create hotkey manager"),
             ));
@@ -244,6 +249,7 @@ pub fn run() {
                 audio_manager: audio_manager.clone(),
                 sound_manager: sound_manager.clone(),
                 pipewire_manager: pipewire_manager.clone(),
+                #[cfg(target_os = "linux")]
                 hotkey_manager: hotkey_manager.clone(),
             });
 
